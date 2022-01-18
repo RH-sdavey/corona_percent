@@ -12,7 +12,7 @@ shutil.copy('indexBACKUP.html', 'index.html')
 # soup = BeautifulSoup(data, 'html.parser')
 # world_population = soup.find_all('strong', attrs={'id', 'total-pop'})
 # world_population = world_population[0].contents[6]
-world_population = 7_778_810_523
+world_population = 7_921_838_546
 
 # get total number of cases
 URL = 'https://www.worldometers.info/coronavirus/'
