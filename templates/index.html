@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
+    <!-- Bootstrap CSS / Main CSS -->
+    <link href="{{ url_for('static', filename='assets/css/bootstrap.min.css') }}" rel="stylesheet" type="text/css">
+    <link href="{{ url_for('static', filename='assets/css/main.css') }}" rel="stylesheet" type="text/css">
+
+    <title>Corona_Percent</title>
+</head>
+
+<body>
+
+<section class="mainhero">
+    <nav class="navbar" style="background-color:black">
+        <div class="navbar-nav">
+            <div class="row faded text-center">
+                <p style="margin-left:2rem; color:#8fb1e9">Created by Sean Davey</p>
+                <a class="link link--social link--faded" href="https://github.com/RH-sdavey/corona_percent"
+                   style="font-size:1.5em"><span>Github</span></a>
+                <a class="link link--social link--faded" href="https://www.linkedin.com/in/rh-sean-davey/"
+                   style="font-size:1.5em"><span>LinkedIn</span></a>
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="row text-center">
+            <div class="col-md-12 col-sm-12 col-xs-12">
+                <h4>Percentage of humans that have been infected with <span style="color:#f96d6d">Covid19</span></h4>
+                <p class="data-text">
+                    <span class="data-key">World Population:</span> {{ '{0:_}'.format(data_set['world_pop']) }}
+                </p>
+                <p class="data-text">
+                    <span class="data-key">Total Cases:</span> {{ '{0:_}'.format(data_set['total_cases']) }}
+                </p>
+                <strong><h1 class="sean-percent">{{ data_set['cases_pct'] }}%</h1></strong>
+            </div>
+        </div>
+        <div class="row text-center">
+            <div class="col-md-12 col-sm-12 col-xs-12">
+                <p class="data-text">
+                    <span class="data-key">Active Cases: </span>
+                    {{ '{0:_}'.format(data_set['total_active']) }}
+                    ({{ data_set['pct_active_cases'] }}% <span class="data-key">of Total Cases </span> ·
+                    {{ data_set['pct_active_population'] }}% <span class="data-key">of Population</span>)
+                </p>
+                <p class="data-text">
+                    <span class="data-key">Total Deaths: </span>
+                    {{ '{0:_}'.format(data_set['total_deaths']) }}
+                    ({{ data_set['pct_deaths_cases'] }}% <span class="data-key">of Total Cases </span> ·
+                    {{ data_set['pct_deaths_population'] }}% <span class="data-key">of Population</span>)
+                </p>
+                <p class="data-text">
+                    <span class="data-key">Total Recovered: </span>
+                    {{ '{0:_}'.format(data_set['total_recovered']) }}
+                    ({{ data_set['pct_recovered_cases'] }}% <span class="data-key">of Total Cases </span> ·
+                    {{ data_set['pct_recovered_population'] }}% <span class="data-key">of Population</span>)
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- jQuery first, then Bootstrap JS -->
+<script src="assets/js/jquery-min.js"></script>
+<script src="assets/js/bootstrap.min.js"></script>
+<script src="assets/js/vegas.min.js"></script>
+<script src="assets/js/main.js"></script>
+</body>
+</html>
